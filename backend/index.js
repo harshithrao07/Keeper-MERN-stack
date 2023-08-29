@@ -8,7 +8,7 @@ app.use(express.urlencoded())
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect("mongodb://127.0.0.1/KeeperDB", { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("DB connected"))
+mongoose.connect("mongodb+srv://admin-harshith:admin-password@cluster0.ydoselo.mongodb.net/KeeperDB", { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("DB connected"))
 
 const keeperSchema = mongoose.Schema({
     title: String,
