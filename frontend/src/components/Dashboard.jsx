@@ -7,17 +7,17 @@ const Dashboard = () => {
     const [notes, setNotes] = useState([]);
 
     useEffect(() => {
-        axios.get("https://keeper-harshith.netlify.app/dashboard/api/getAll")
+        axios.get("https://keeper-harshith.netlify.app/api/getAll")
             .then(res => setNotes(res.data))
     }, [])
 
     function addNote(newNote) {
-        axios.post("https://keeper-harshith.netlify.app/dashboard/api/addNew", newNote)
+        axios.post("https://keeper-harshith.netlify.app/api/addNew", newNote)
             .then(res => setNotes(res.data))
     }
 
     function deleteNote(id) {
-        axios.post("https://keeper-harshith.netlify.app/dashboard/api/delete", { id })
+        axios.post("https://keeper-harshith.netlify.app/api/delete", { id })
             .then(res => setNotes(res.data))
     }
 
