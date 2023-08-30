@@ -7,17 +7,17 @@ const Dashboard = () => {
     const [notes, setNotes] = useState([]);
 
     useEffect(() => {
-        axios.get("https://keeper-app-f7s8.onrender.com/api/getAll")
+        axios.get("http://localhost:3000/api/getAll")
             .then(res => setNotes(res.data))
     }, [])
 
     function addNote(newNote) {
-        axios.post("https://keeper-app-f7s8.onrender.com/api/addNew", newNote)
+        axios.post("http://localhost:3000/api/addNew", newNote)
             .then(res => setNotes(res.data))
     }
 
     function deleteNote(id) {
-        axios.post("https://keeper-app-f7s8.onrender.com/api/delete", { id })
+        axios.post("http://localhost:3000/api/delete", { id })
             .then(res => setNotes(res.data))
     }
 
