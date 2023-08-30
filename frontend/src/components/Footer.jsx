@@ -1,7 +1,7 @@
 const Footer = () => {
     return(
-        <footer style={{ cursor:"url(myBall.cur),auto"}}>
-            <p>Made with ❤️ by Harshith Rao</p>
+        <footer style={{ cursor:"grab"}}>
+            <p>Made with ❤️ by <a href="https://github.com/harshithrao07">Harshith Rao</a></p>
         </footer>
     )
 }
