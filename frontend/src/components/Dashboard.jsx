@@ -2,23 +2,22 @@ import CreateArea from "./CreateArea";
 import Note from "./Note";
 import { useState, useEffect } from "react";
 import axios from "axios";
-const baseURL = "https://keeper-harshith.netlify.app";
 
 const Dashboard = () => {
     const [notes, setNotes] = useState([]);
 
     useEffect(() => {
-        axios.get(`${baseURL}/api/getAll`)
+        axios.get("https://keeper-app-f7s8.onrender.com/api/getAll")
             .then(res => setNotes(res.data))
     }, [])
 
     function addNote(newNote) {
-        axios.post(`${baseURL}/api/addNew`, newNote)
+        axios.post("https://keeper-app-f7s8.onrender.com/api/addNew", newNote)
             .then(res => setNotes(res.data))
     }
 
     function deleteNote(id) {
-        axios.post(`${baseURL}/api/delete`, { id })
+        axios.post("https://keeper-app-f7s8.onrender.com/api/delete", { id })
             .then(res => setNotes(res.data))
     }
 
